@@ -88,6 +88,7 @@ def main():
             "log_ipv4_addresses", "fitted_ipv4", "resid_ipv4"]
     keep = [c for c in keep if c in df.columns]
     df[keep].sort_values("resid_ipv4", ascending=False).to_csv(OUT, index=False)
+    df.to_csv(PANEL, index=False)
     print(f"residuals written to {OUT}\n")
 
     show = [c for c in ["iso2", "country_name", "gdp_per_capita_usd",
