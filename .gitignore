@@ -221,3 +221,6 @@ data/processed/
 *.bz2
 *.gz
 .DS_Store
+
+# results are committed, raw data is not
+!results/

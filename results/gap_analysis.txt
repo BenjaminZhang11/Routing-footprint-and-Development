@@ -1,0 +1,97 @@
+panel countries 212
+with announced data 212
+
+countries with ratio above 1.05 1
+iso2 country_name  ipv4_addresses  announced_addresses  announcement_ratio
+  LK    Sri Lanka          563456               594432            1.054975
+ratios above one arise where announced prefixes extend past the
+delegated block they were attributed to by starting address
+
+countries in ratio analysis 211
+count    211.000
+mean       0.895
+std        0.120
+min        0.399
+25%        0.854
+50%        0.938
+75%        0.976
+max        1.005
+
+lowest share of delegated space actually announced
+iso2        country_name  gdp_per_capita_usd  ipv4_addresses  announced_addresses  announcement_ratio
+  CM            Cameroon         1972.381580          601856               240128            0.398979
+  SD               Sudan         1164.539917         1891072               803328            0.424800
+  MW              Malawi          671.506847          556544               239360            0.430083
+  CD    Congo, Dem. Rep.          806.776001          182016                79104            0.434599
+  ID           Indonesia         5059.625964        19317760             11354624            0.587782
+  SG           Singapore        98813.978817        27818496             16568576            0.595596
+  TZ            Tanzania         1318.819214         1100800               676352            0.614419
+  BN   Brunei Darussalam        32234.642837          216064               136960            0.633886
+  CH         Switzerland       114769.012314        23259760             14843392            0.638158
+  AW               Aruba        38590.565029          111872                73216            0.654462
+  AG Antigua and Barbuda        24819.245468          250368               166912            0.666667
+  GH               Ghana         3257.158890         2203648              1509376            0.684944
+  IE             Ireland       131592.462548        10113088              7222016            0.714126
+  KE               Kenya         2362.860912         6244352              4579072            0.733314
+  LU          Luxembourg       147252.179122         1858560              1362944            0.733333
+
+highest share of delegated space actually announced
+iso2       country_name  gdp_per_capita_usd  ipv4_addresses  announced_addresses  announcement_ratio
+  MZ         Mozambique          626.914419          448512               450816            1.005137
+  MA            Morocco         4672.468262        12274176             12256256            0.998540
+  DO Dominican Republic        11059.208153         1620992              1617920            0.998105
+  ZM             Zambia         1317.877716         1651968              1648640            0.997985
+  DZ            Algeria         6051.003227         4767232              4756736            0.997798
+  CU               Cuba         9605.279146          257024               256256            0.997012
+  GU               Guam        41833.151713          218624               217856            0.996487
+  ET           Ethiopia          932.729353          370176               368640            0.995851
+  PT           Portugal        32081.810615         6691872              6649600            0.993683
+  LS            Lesotho         1088.962762          121344               120576            0.993671
+
+======================================================================
+announced address space on income and population
+======================================================================
+n 211   R2 0.856
+                           coef  std_err    p
+Intercept              -12.9249   0.7565  0.0
+log_gdp_per_capita_usd   1.1964   0.0483  0.0
+log_population           0.9954   0.0313  0.0
+
+======================================================================
+share of delegated space announced, on income and population
+======================================================================
+n 195   R2 0.012
+                          coef  std_err       p
+Intercept               3.5015   1.1165  0.0017
+log_gdp_per_capita_usd  0.0105   0.0737  0.8866
+log_population         -0.0615   0.0458  0.1795
+
+countries that look worse once announcement is used
+iso2             country_name  resid_ipv4  resid_announced  resid_shift
+  CM                 Cameroon      -0.122           -0.897       -0.775
+  SD                    Sudan       1.099            0.396       -0.703
+  MW                   Malawi       1.377            0.684       -0.693
+  CD         Congo, Dem. Rep.      -1.589           -2.261       -0.672
+  MH         Marshall Islands       1.920            1.386       -0.534
+  CF Central African Republic      -1.594           -2.059       -0.465
+  KY           Cayman Islands      -0.731           -1.187       -0.456
+  TD                     Chad      -2.135           -2.578       -0.443
+  SG                Singapore       0.651            0.234       -0.417
+  ID                Indonesia      -0.039           -0.415       -0.377
+
+countries that look better once announcement is used
+iso2     country_name  resid_ipv4  resid_announced  resid_shift
+  MZ       Mozambique       0.769            0.929        0.160
+  ET         Ethiopia      -1.235           -1.077        0.158
+  MG       Madagascar       1.164            1.308        0.144
+  ZM           Zambia       1.678            1.821        0.143
+  MA          Morocco       1.615            1.753        0.138
+  DZ          Algeria       0.151            0.288        0.137
+  EG Egypt, Arab Rep.       1.657            1.793        0.136
+  ER          Eritrea      -1.741           -1.605        0.136
+  YE      Yemen, Rep.      -0.056            0.079        0.136
+  GW    Guinea-Bissau      -1.531           -1.402        0.128
+
+correlation between the two residual measures 0.987
+
+written to data/processed/gap_panel.csv

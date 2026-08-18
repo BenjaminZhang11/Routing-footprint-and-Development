@@ -1,0 +1,93 @@
+countries in estimation sample 212
+
+correlation of log per-capita footprint with log income
+r 0.871   n 212
+
+======================================================================
+Model 1  baseline
+log_ipv4_addresses ~ log_gdp_per_capita_usd + log_population
+======================================================================
+n 212   R2 0.859   adj R2 0.857
+
+                           coef  std_err        t    p
+Intercept              -12.8562   0.7537 -17.0582  0.0
+log_gdp_per_capita_usd   1.1886   0.0467  25.4410  0.0
+log_population           1.0033   0.0314  31.9685  0.0
+
+population elasticity 1.003
+test of elasticity equal to one, p 0.9175
+not rejected, consistent with proportional scaling
+
+======================================================================
+Model 2  adding internet penetration
+log_ipv4_addresses ~ log_gdp_per_capita_usd + log_population + internet_users_pct
+======================================================================
+n 206   R2 0.861   adj R2 0.859
+
+                           coef  std_err        t       p
+Intercept              -10.9353   0.9354 -11.6910  0.0000
+log_gdp_per_capita_usd   0.9162   0.0963   9.5119  0.0000
+log_population           0.9599   0.0361  26.5850  0.0000
+internet_users_pct       0.0177   0.0060   2.9223  0.0035
+
+======================================================================
+Model 3  ASN count as outcome
+log_asn_count ~ log_gdp_per_capita_usd + log_population
+======================================================================
+n 212   R2 0.775   adj R2 0.773
+
+                           coef  std_err        t    p
+Intercept              -14.7808   0.7285 -20.2884  0.0
+log_gdp_per_capita_usd   0.8260   0.0447  18.4858  0.0
+log_population           0.7430   0.0325  22.8715  0.0
+
+residuals written to data/processed/residuals.csv
+
+most over-provisioned relative to income and population
+iso2         country_name  gdp_per_capita_usd  ipv4_addresses  resid_ipv4
+  SC           Seychelles        19449.383635         8991488    5.374209
+  MU            Mauritius        12991.293599         3698944    2.642190
+  GM          Gambia, The          919.060423          274944    2.369102
+  TV               Tuvalu         6041.449086            8192    2.330846
+  TN              Tunisia         4656.638184         7876608    2.314623
+  MH     Marshall Islands         8489.057935           31232    1.919622
+  AG  Antigua and Barbuda        24819.245468          250368    1.768658
+  ZM               Zambia         1317.877716         1651968    1.677557
+  EG     Egypt, Arab Rep.         3085.807120        24152832    1.656614
+  VE        Venezuela, RB         3494.813887         6703104    1.654757
+  MA              Morocco         4672.468262        12274176    1.615180
+  SY Syrian Arab Republic         1056.782647         1282048    1.529700
+
+most under-provisioned relative to income and population
+iso2      country_name  gdp_per_capita_usd  ipv4_addresses  resid_ipv4
+  TM      Turkmenistan         6540.178764           22336   -3.470069
+  GQ Equatorial Guinea         6615.252452           17920   -2.330721
+  TD              Chad         1022.335594           25856   -2.135245
+  GN            Guinea         1877.254122           39168   -2.111156
+  IQ              Iraq         5409.678997          447040   -2.073941
+  GY            Guyana        32413.793076           69888   -2.014883
+  CU              Cuba         9605.279146          257024   -1.846648
+  ZW          Zimbabwe         3021.430199          105472   -1.802253
+  PG  Papua New Guinea         3019.530914           67072   -1.798490
+  UZ        Uzbekistan         3968.272008          333056   -1.760984
+  QA             Qatar        72524.906639          847744   -1.748990
+  ER           Eritrea          688.681660            4096   -1.740660
+
+mean residual by region
+                                                    mean  count
+region                                                         
+East Asia & Pacific                                0.084     36
+Europe & Central Asia                             -0.019     55
+Latin America & Caribbean                         -0.044     41
+Middle East, North Africa, Afghanistan & Pakistan  0.078     23
+North America                                      0.106      3
+South Asia                                        -0.369      6
+Sub-Saharan Africa                                -0.000     48
+
+mean residual by income group
+                      mean  count
+income_group                     
+High income          0.012     83
+Low income          -0.208     24
+Lower middle income  0.023     47
+Upper middle income  0.050     58
