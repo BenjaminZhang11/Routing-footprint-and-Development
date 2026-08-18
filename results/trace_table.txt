@@ -3,11 +3,25 @@ task 1, delegation ranges loaded
   ipv6    70,342 ranges
   asn    102,313 ranges
 
-warts files 5
+warts files 19
   acc-gh.c015576.20260811.warts.gz               34,500 traces
   acv-us.c015576.20260811.warts.gz               31,500 traces
   adl-au.c015576.20260811.warts.gz               28,500 traces
   aep2-ar.c015576.20260811.warts.gz              37,500 traces
+  akl2-nz.c015576.20260811.warts.gz              33,000 traces
+  arn-se.c015576.20260811.warts.gz               33,000 traces
+  bom2-in.c015576.20260811.warts.gz              25,500 traces
+  dxb-ae.c015576.20260811.warts.gz               30,000 traces
+  gru3-br.c015576.20260811.warts.gz              34,500 traces
+  hkg-hk.c015576.20260811.warts.gz               31,500 traces
+  hnd-jp.c015576.20260811.warts.gz               31,500 traces
+  iad-us.c015576.20260811.warts.gz               30,000 traces
+  jnb3-za.c015576.20260811.warts.gz              27,000 traces
+  lhr-uk.c015576.20260811.warts.gz               27,000 traces
+  mex2-mx.c015576.20260811.warts.gz              28,500 traces
+  nbo-ke.c015576.20260811.warts.gz               36,000 traces
+  sin-sg.c015576.20260811.warts.gz               31,500 traces
+  waw-pl.c015576.20260811.warts.gz               37,500 traces
   zrh9-ch.c015576.20260811.warts.gz              34,500 traces
 
 trace table written to data/processed/trace_table.csv
@@ -25,39 +39,39 @@ monitor             dst dst_cc     last_hop_ip last_hop_cc   rtt_ms stop_reason
  acc-gh    87.126.97.24     BG     87.126.96.3          BG  135.778     UNREACH
  acc-gh  189.153.44.143     MX  189.153.44.143          MX  207.950   COMPLETED
 
-total traces 166,500
-traces with a responding hop 166,359
-destination attributed to a country 166,486
-last hop landed in destination country 127,216
+total traces 603,000
+traces with a responding hop 602,827
+destination attributed to a country 602,941
+last hop landed in destination country 420,761
 
 country summary written to data/processed/reach_by_country.csv
 
-countries with at least 30 traces 101
+countries with at least 30 traces 147
 
 highest share of traces reaching the destination country
         traces  reached  median_rtt  reach_rate
 dst_cc                                         
-BY          89       89       196.0       1.000
-KZ         149      136       255.9       0.913
-CN       14906    13513       307.5       0.907
-TH         487      437       255.9       0.897
-MD          65       58       197.0       0.892
-VN         838      743       262.3       0.887
-TW        1729     1525       216.0       0.882
-LK          33       29       291.8       0.879
-US       69780    61077       143.5       0.875
-NP          37       32       255.5       0.865
+BY         283      283       194.0       1.000
+CU          54       54       261.4       1.000
+YE          54       52       198.2       0.963
+LY          95       90       186.8       0.947
+MG         121      112       275.4       0.926
+UZ          54       50       190.9       0.926
+KZ         610      564       225.0       0.925
+LK         114      105       236.6       0.921
+TH        1709     1550       223.6       0.907
+UY         518      467       259.7       0.902
 
 lowest share
         traces  reached  median_rtt  reach_rate
 dst_cc                                         
-IR         562       37       235.4       0.066
-PE         169       21       207.8       0.124
-ZM          90       12       309.3       0.133
-CR         134       26       189.3       0.194
-SY          65       13       200.0       0.200
-DZ         262       57       178.9       0.218
-VE         327       74       177.1       0.226
-TN         392       97       169.1       0.247
-SC         470      126       201.5       0.268
-KW          94       30       198.9       0.319
+ET          73        0       228.5       0.000
+EU          45        0       162.7       0.000
+IR        1967      145       211.7       0.074
+ZM         328       31       289.7       0.095
+NI          66        8       210.4       0.121
+PE         622       80       219.0       0.129
+IQ          69       11       214.2       0.159
+PS         143       23       161.3       0.161
+GM          59       10       208.5       0.169
+DZ         936      174       166.5       0.186

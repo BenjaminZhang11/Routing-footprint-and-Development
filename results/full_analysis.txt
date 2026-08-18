@@ -1,0 +1,83 @@
+traces loaded 166,500
+countries with traces 202
+
+overall reachability by definition
+  same country 0.764
+  same /16     0.143
+  same /24     0.118
+
+panel loaded from gap_panel_ofc.csv, 195 countries
+panel countries with trace data 182
+
+estimation sample, at least 30 traces 99
+
+correlations among the three reachability definitions
+               reach_country  reach_16  reach_24
+reach_country          1.000     0.342     0.319
+reach_16               0.342     1.000     0.900
+reach_24               0.319     0.900     1.000
+
+========================================================================
+reachability, same country definition
+========================================================================
+n 99   R2 0.077
+              coef  std_err       p
+Intercept  -0.2453   0.3222  0.4465
+log_gdp_pc  0.0435   0.0180  0.0156
+log_pop     0.0255   0.0115  0.0266
+
+========================================================================
+reachability, strict same /24 definition
+========================================================================
+n 99   R2 0.057
+              coef  std_err       p
+Intercept   0.1875   0.1746  0.2830
+log_gdp_pc  0.0112   0.0084  0.1828
+log_pop    -0.0086   0.0072  0.2273
+
+========================================================================
+median round trip time to last responding hop
+========================================================================
+n 99   R2 0.328
+                coef  std_err       p
+Intercept   354.0954  75.1836  0.0000
+log_gdp_pc  -18.5314   4.2730  0.0000
+log_pop       1.9347   2.6806  0.4705
+
+the three stages, mean by income group
+                     announcement_ratio  reach_country  reach_24  median_rtt
+income_group                                                                
+High income                       0.894          0.618     0.172     187.958
+Low income                        0.709          0.510     0.011     253.400
+Lower middle income               0.874          0.535     0.094     246.881
+Upper middle income               0.915          0.615     0.162     215.593
+
+lowest reachability, strict definition
+iso2         country_name  gdp_per_capita_usd  announcement_ratio  reach_country  reach_24  median_rtt  traces
+  SD                Sudan            1164.540               0.425          0.500     0.000       218.7    42.0
+  EG     Egypt, Arab Rep.            3085.807               0.985          0.565     0.015       191.8  1267.0
+  SY Syrian Arab Republic            1056.783               0.891          0.200     0.015       200.0    65.0
+  UG               Uganda            1206.305               0.811          0.830     0.017       341.5    59.0
+  DO   Dominican Republic           11059.208               0.998          0.430     0.022       181.7    93.0
+  ZM               Zambia            1317.878               0.998          0.133     0.022       309.3    90.0
+  IR   Iran, Islamic Rep.            3924.380               0.933          0.066     0.023       235.4   562.0
+  GH                Ghana            3257.159               0.685          0.440     0.027       255.4    75.0
+  BO              Bolivia            5147.811               0.984          0.790     0.035       227.4    57.0
+  TR              Turkiye           18599.442               0.935          0.604     0.038       193.2   891.0
+  FR               France           48985.731               0.896          0.640     0.041       147.7  3960.0
+  IE              Ireland          131592.463               0.714          0.476     0.052       162.2   368.0
+
+highest reachability, strict definition
+iso2 country_name  gdp_per_capita_usd  announcement_ratio  reach_country  reach_24  median_rtt  traces
+  MD      Moldova            8621.717               0.894          0.892     0.477       197.0    65.0
+  MX       Mexico           13889.234               0.800          0.718     0.409       187.7  1230.0
+  LT    Lithuania           32958.671               0.884          0.653     0.383       180.5   193.0
+  GE      Georgia            9691.535               0.974          0.792     0.364       255.3    77.0
+  BE      Belgium           60750.274               0.811          0.638     0.362       165.4   492.0
+  CY       Cyprus           41783.090               0.911          0.609     0.359       215.6    64.0
+  QA        Qatar           72524.907               0.990          0.825     0.350       215.7    40.0
+  LV       Latvia           26311.973               0.954          0.546     0.349       188.9    86.0
+  KZ   Kazakhstan           14692.133               0.932          0.913     0.342       255.9   149.0
+  UY      Uruguay           25215.824               0.970          0.745     0.342       238.8   149.0
+
+written to data/processed/full_panel.csv and results/full_panel.csv

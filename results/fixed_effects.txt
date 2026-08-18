@@ -1,0 +1,88 @@
+traces 602,636, kept after latency filter 596,432
+countries with at least 30 traces 145
+monitors 19
+
+rtt_effect
+  n 595,724   R2 0.221
+  countries recovered 144
+
+reach_effect
+  n 595,724   R2 0.092
+  countries recovered 144
+
+panel gap_panel_ofc.csv, 195 countries
+
+matched to panel 140
+
+estimation sample 139
+
+how much the vantage point mattered
+  correlation of raw log latency with adjusted effect 0.873
+
+========================================================================
+adjusted latency on income and population
+========================================================================
+n 139   R2 0.406
+              coef  std_err       p
+Intercept   1.7723   0.3637  0.0000
+log_gdp_pc -0.1369   0.0163  0.0000
+log_pop    -0.0305   0.0153  0.0457
+
+========================================================================
+adjusted reachability on income and population
+========================================================================
+n 139   R2 0.044
+              coef  std_err       p
+Intercept  -0.5864   0.2321  0.0115
+log_gdp_pc  0.0338   0.0146  0.0204
+log_pop     0.0165   0.0093  0.0749
+
+========================================================================
+adjusted latency, controlling for announcement ratio
+========================================================================
+n 139   R2 0.408
+                      coef  std_err       p
+Intercept           1.8813   0.3619  0.0000
+log_gdp_pc         -0.1366   0.0166  0.0000
+log_pop            -0.0314   0.0151  0.0380
+announcement_ratio -0.1093   0.1570  0.4862
+
+lowest adjusted latency, best connected relative to vantage points
+iso2   country_name  gdp_per_capita_usd  raw_median_rtt  rtt_effect  reach_effect  traces
+  GB United Kingdom           57601.962         115.128      -1.124         0.014   20035
+  US  United States           90026.516         132.534      -0.813         0.147  249830
+  CH    Switzerland          114769.012         148.687      -0.589         0.127    2807
+  DE        Germany           60496.435         149.907      -0.505         0.021   22285
+  DK        Denmark           76970.154         156.454      -0.502        -0.110    2175
+  NL    Netherlands           73683.917         149.705      -0.501         0.013    7495
+  PL         Poland           28419.578         161.063      -0.495        -0.011    3660
+  IE        Ireland          131592.463         157.861      -0.412        -0.077    1334
+  FR         France           48985.731         146.244      -0.390         0.079   14242
+  ME     Montenegro           14816.838         167.169      -0.388        -0.083      41
+  IT          Italy           43308.640         158.143      -0.384         0.079    9891
+  BE        Belgium           60750.274         156.301      -0.374         0.052    1862
+
+highest adjusted latency
+iso2      country_name  gdp_per_capita_usd  raw_median_rtt  rtt_effect  reach_effect  traces
+  FJ              Fiji            6642.004         289.750       0.615        -0.193      35
+  MW            Malawi             671.507         304.112       0.487         0.258      46
+  GU              Guam           41833.152         253.374       0.453         0.231      33
+  CM          Cameroon            1972.382         251.893       0.441         0.056      44
+  MG        Madagascar             599.265         274.648       0.439         0.353     119
+  RW            Rwanda            1123.739         235.058       0.429        -0.098      43
+  BN Brunei Darussalam           32234.643         246.450       0.419         0.113      30
+  MM           Myanmar            1488.875         233.825       0.406        -0.020      39
+  CN             China           13861.970         258.791       0.374         0.315   53847
+  BW          Botswana            7778.115         266.801       0.368         0.181      30
+  YE       Yemen, Rep.             633.887         198.224       0.350         0.391      54
+  EC           Ecuador            7125.276         223.062       0.346        -0.141     407
+
+adjusted measures by income group
+                     rtt_effect  reach_effect  announcement_ratio
+income_group                                                     
+High income              -0.166         0.027               0.893
+Low income                0.272        -0.054               0.827
+Lower middle income       0.144        -0.063               0.869
+Upper middle income       0.067         0.006               0.918
+
+written to data/processed/country_effects.csv and results/country_effects.csv
