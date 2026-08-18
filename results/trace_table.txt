@@ -1,0 +1,63 @@
+task 1, delegation ranges loaded
+  ipv4   260,709 ranges
+  ipv6    70,342 ranges
+  asn    102,313 ranges
+
+warts files 5
+  acc-gh.c015576.20260811.warts.gz               34,500 traces
+  acv-us.c015576.20260811.warts.gz               31,500 traces
+  adl-au.c015576.20260811.warts.gz               28,500 traces
+  aep2-ar.c015576.20260811.warts.gz              37,500 traces
+  zrh9-ch.c015576.20260811.warts.gz              34,500 traces
+
+trace table written to data/processed/trace_table.csv
+
+sample rows
+monitor             dst dst_cc     last_hop_ip last_hop_cc   rtt_ms stop_reason
+ acc-gh  109.228.149.73     SE  213.249.107.94          GB  125.178     UNREACH
+ acc-gh  195.60.116.189     DE   195.60.111.60          DE 3202.978     UNREACH
+ acc-gh  131.72.156.162     AR  131.72.156.162          AR  317.754   COMPLETED
+ acc-gh 124.218.147.196     TW 124.218.147.196          TW  325.241   COMPLETED
+ acc-gh  96.236.213.199     US  96.236.213.199          US  173.669   COMPLETED
+ acc-gh    73.84.195.47     US    73.84.195.47          US  205.473   COMPLETED
+ acc-gh   91.228.68.211     GB   91.228.68.211          GB  125.975   COMPLETED
+ acc-gh   173.32.91.192     CA   173.32.91.192          CA  179.652   COMPLETED
+ acc-gh    87.126.97.24     BG     87.126.96.3          BG  135.778     UNREACH
+ acc-gh  189.153.44.143     MX  189.153.44.143          MX  207.950   COMPLETED
+
+total traces 166,500
+traces with a responding hop 166,359
+destination attributed to a country 166,486
+last hop landed in destination country 127,216
+
+country summary written to data/processed/reach_by_country.csv
+
+countries with at least 30 traces 101
+
+highest share of traces reaching the destination country
+        traces  reached  median_rtt  reach_rate
+dst_cc                                         
+BY          89       89       196.0       1.000
+KZ         149      136       255.9       0.913
+CN       14906    13513       307.5       0.907
+TH         487      437       255.9       0.897
+MD          65       58       197.0       0.892
+VN         838      743       262.3       0.887
+TW        1729     1525       216.0       0.882
+LK          33       29       291.8       0.879
+US       69780    61077       143.5       0.875
+NP          37       32       255.5       0.865
+
+lowest share
+        traces  reached  median_rtt  reach_rate
+dst_cc                                         
+IR         562       37       235.4       0.066
+PE         169       21       207.8       0.124
+ZM          90       12       309.3       0.133
+CR         134       26       189.3       0.194
+SY          65       13       200.0       0.200
+DZ         262       57       178.9       0.218
+VE         327       74       177.1       0.226
+TN         392       97       169.1       0.247
+SC         470      126       201.5       0.268
+KW          94       30       198.9       0.319
