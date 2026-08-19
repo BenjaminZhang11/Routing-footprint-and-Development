@@ -111,8 +111,13 @@ def figure_ratio(df):
             + quad.params["log_gdp_pc_sq"] * xs ** 2,
             color="#1b7837", linewidth=2.2, label="quadratic fit")
 
-    label_points(ax, d, "log_gdp_pc", "announcement_ratio", LABEL_RATIO,
-                 dx=0.05, dy=0.012)
+    offsets = {"MW": (-0.28, 0.012), "CD": (0.06, 0.016), "CM": (0.06, 0.014),
+               "SD": (0.06, -0.028)}
+    for _, r in d[d["iso2"].isin(LABEL_RATIO)].iterrows():
+        ddx, ddy = offsets.get(r["iso2"], (0.05, 0.012))
+        ax.annotate(r["iso2"], (r["log_gdp_pc"], r["announcement_ratio"]),
+                    xytext=(r["log_gdp_pc"] + ddx, r["announcement_ratio"] + ddy),
+                    fontsize=8, color="#333333")
 
     ax.set_xlabel("log GDP per capita, current US dollars")
     ax.set_ylabel("share of delegated space announced")
