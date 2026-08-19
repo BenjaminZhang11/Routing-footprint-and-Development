@@ -25,7 +25,7 @@ MIN_TRACES = 100
 
 LABEL_LOW_LATENCY = {"GB", "US", "CH", "DE", "NL", "SE", "JP", "KR"}
 LABEL_HIGH_LATENCY = {"CN", "MG", "MW", "CM", "MM", "BO", "NP", "ET"}
-LABEL_RATIO = {"SC", "SG", "CH", "LU", "IE", "CM", "SD", "MW", "CD", "EG", "BR"}
+LABEL_RATIO = {"SG", "CH", "LU", "IE", "CM", "SD", "MW", "CD"}
 
 plt.rcParams.update({
     "figure.dpi": 130,
@@ -116,7 +116,7 @@ def figure_ratio(df):
 
     ax.set_xlabel("log GDP per capita, current US dollars")
     ax.set_ylabel("share of delegated space announced")
-    ax.set_title("The poorest and the richest both announce less, for opposite reasons",
+    ax.set_title("Announcement share peaks in the middle of the income range",
                  loc="left", fontsize=12, weight="bold")
     ax.legend(frameon=False, fontsize=8, loc="lower right")
     ax.text(0.02, 0.04,

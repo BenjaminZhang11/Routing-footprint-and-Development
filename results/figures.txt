@@ -4,5 +4,5 @@ figure 2 written, quadratic p=0.0003
 
 figures written to figures/
   01_latency_income.png  149 KB
-  02_announcement_ratio.png  146 KB
+  02_announcement_ratio.png  144 KB
   03_stages_by_income.png  90 KB
